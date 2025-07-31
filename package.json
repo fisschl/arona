@@ -6,10 +6,10 @@
     "build": "vite build"
   },
   "dependencies": {
+    "@ark-ui/vue": "^5.18.2",
     "@fontsource-variable/fira-code": "^5.2.6",
     "@fontsource-variable/noto-sans-sc": "^5.2.6",
     "@iconify-json/tabler": "^1.2.20",
-    "@tailwindcss/forms": "^0.5.10",
     "@tailwindcss/typography": "^0.5.16",
     "@tailwindcss/vite": "^4.1.11",
     "@tsconfig/node-lts": "^22.0.2",
@@ -20,6 +20,8 @@
     "@vueuse/core": "^13.6.0",
     "@vueuse/integrations": "^13.6.0",
     "browserslist": "^4.25.1",
+    "dayjs": "^1.11.13",
+    "element-plus": "^2.10.4",
     "idb-keyval": "^6.2.2",
     "lightningcss": "^1.30.1",
     "lodash-es": "^4.17.21",
@@ -29,7 +31,6 @@
     "unplugin-auto-import": "^19.3.0",
     "unplugin-icons": "^22.2.0",
     "unplugin-turbo-console": "^2.2.0",
-    "unplugin-vue-components": "^28.8.0",
     "unplugin-vue-router": "^0.14.0",
     "unstorage": "^1.16.1",
     "uuid": "^11.1.0",
@@ -49,6 +50,7 @@
     "oxlint": "^1.9.0",
     "prettier": "^3.6.2",
     "prettier-plugin-tailwindcss": "^0.6.14",
-    "typescript": "^5.8.3"
+    "typescript": "^5.8.3",
+    "unplugin-vue-components": "^28.8.0"
   }
 }

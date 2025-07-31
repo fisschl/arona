@@ -8,6 +8,7 @@ import AutoImport from "unplugin-auto-import/vite";
 import IconsResolver from "unplugin-icons/resolver";
 import Icons from "unplugin-icons/vite";
 import TurboConsole from "unplugin-turbo-console/vite";
+import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
 import Components from "unplugin-vue-components/vite";
 import { VueRouterAutoImports } from "unplugin-vue-router";
 import VueRouter from "unplugin-vue-router/vite";
@@ -15,6 +16,7 @@ import { defineConfig } from "vite";
 import vueDevTools from "vite-plugin-vue-devtools";
 
 export default defineConfig({
+  base: "/arona/",
   plugins: [
     VueRouter({
       exclude: ["**/utils/**", "**/components/**", "**/assets/**"],
@@ -25,10 +27,11 @@ export default defineConfig({
     tailwindcss(),
     AutoImport({
       imports: ["vue", VueRouterAutoImports],
+      resolvers: [ElementPlusResolver()],
     }),
     Components({
       deep: false,
-      resolvers: [IconsResolver()],
+      resolvers: [IconsResolver(), ElementPlusResolver({ importStyle: false })],
     }),
     Icons({ compiler: "vue3" }),
     TurboConsole({}),

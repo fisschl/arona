@@ -12,6 +12,7 @@
   "editor.quickSuggestions": {
     "strings": "on"
   },
+  "files.autoSave": "onFocusChange",
   "tailwindCSS.classAttributes": ["class", "ui"],
   "tailwindCSS.experimental.classRegex": [["ui:\\s*{([^)]*)\\s*}", "(?:'|\"|`)([^']*)(?:'|\"|`)"]]
 }
