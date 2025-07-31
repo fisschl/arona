@@ -13,7 +13,6 @@ export const readS3Access = async () => {
 };
 
 export const writeS3Access = async (access: Record<string, unknown>) => {
-  const parsed = S3AccessZod.safeParse(access);
-  if (!parsed.success) throw new Error("Invalid access");
-  await storage.setItem("s3-access", parsed.data);
+  const parsed = S3AccessZod.parse(access);
+  await storage.setItem("s3-access", parsed);
 };
