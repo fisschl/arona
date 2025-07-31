@@ -31,7 +31,7 @@ export default defineConfig({
     }),
     Components({
       deep: false,
-      resolvers: [IconsResolver(), ElementPlusResolver({ importStyle: false })],
+      resolvers: [IconsResolver(), ElementPlusResolver()],
     }),
     Icons({ compiler: "vue3" }),
     TurboConsole({}),

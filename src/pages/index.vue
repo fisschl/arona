@@ -53,14 +53,13 @@ const resetForm = (formEl: FormInstance | undefined) => {
 
 <template>
   <div class="mx-auto my-20 w-max">
-    <el-card class="w-96">
+    <ElCard class="w-96">
       <template #header>
         <div class="flex items-center justify-between">
           <span class="text-lg font-medium">基础配置</span>
         </div>
       </template>
-
-      <el-form
+      <ElForm
         ref="formRef"
         :model="formData"
         :rules="rules"
@@ -68,18 +67,18 @@ const resetForm = (formEl: FormInstance | undefined) => {
         label-position="top"
         @submit.prevent
       >
-        <el-form-item label="ACCESS_KEY_ID" prop="accessKeyId">
-          <el-input
+        <ElFormItem label="ACCESS_KEY_ID" prop="accessKeyId">
+          <ElInput
             v-model="formData.accessKeyId"
             placeholder="请输入 ACCESS_KEY_ID"
             clearable
             show-word-limit
             maxlength="50"
           />
-        </el-form-item>
+        </ElFormItem>
 
-        <el-form-item label="SECRET_ACCESS_KEY" prop="secretAccessKey">
-          <el-input
+        <ElFormItem label="SECRET_ACCESS_KEY" prop="secretAccessKey">
+          <ElInput
             v-model="formData.secretAccessKey"
             type="password"
             placeholder="请输入 SECRET_ACCESS_KEY"
@@ -88,28 +87,26 @@ const resetForm = (formEl: FormInstance | undefined) => {
             show-word-limit
             maxlength="100"
           />
-        </el-form-item>
+        </ElFormItem>
 
-        <el-form-item label="ENDPOINT" prop="endpoint">
-          <el-input
+        <ElFormItem label="ENDPOINT" prop="endpoint">
+          <ElInput
             v-model="formData.endpoint"
             placeholder="请输入 ENDPOINT (例如: https://s3.amazonaws.com)"
             clearable
             show-word-limit
             maxlength="200"
           />
-        </el-form-item>
+        </ElFormItem>
 
-        <el-form-item>
+        <ElFormItem>
           <div class="flex gap-4">
-            <el-button type="primary" :loading="false" @click="submitForm(formRef)">
-              提交
-            </el-button>
-            <el-button @click="resetForm(formRef)"> 重置 </el-button>
+            <ElButton type="primary" :loading="false" @click="submitForm(formRef)"> 提交 </ElButton>
+            <ElButton @click="resetForm(formRef)"> 重置 </ElButton>
           </div>
-        </el-form-item>
-      </el-form>
-    </el-card>
+        </ElFormItem>
+      </ElForm>
+    </ElCard>
   </div>
 </template>
 
