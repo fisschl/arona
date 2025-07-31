@@ -1,32 +1,50 @@
-import { defineConfig } from "vite";
+import { fileURLToPath, URL } from "node:url";
+import tailwindcss from "@tailwindcss/vite";
 import vue from "@vitejs/plugin-vue";
+import vueJsx from "@vitejs/plugin-vue-jsx";
+import browserslist from "browserslist";
+import { browserslistToTargets } from "lightningcss";
+import AutoImport from "unplugin-auto-import/vite";
+import IconsResolver from "unplugin-icons/resolver";
+import Icons from "unplugin-icons/vite";
+import TurboConsole from "unplugin-turbo-console/vite";
+import Components from "unplugin-vue-components/vite";
+import { VueRouterAutoImports } from "unplugin-vue-router";
+import VueRouter from "unplugin-vue-router/vite";
+import { defineConfig } from "vite";
+import vueDevTools from "vite-plugin-vue-devtools";
 
-// @ts-expect-error process is a nodejs global
-const host = process.env.TAURI_DEV_HOST;
-
-// https://vitejs.dev/config/
-export default defineConfig(async () => ({
-  plugins: [vue()],
-
-  // Vite options tailored for Tauri development and only applied in `tauri dev` or `tauri build`
-  //
-  // 1. prevent vite from obscuring rust errors
-  clearScreen: false,
-  // 2. tauri expects a fixed port, fail if that port is not available
-  server: {
-    port: 1420,
-    strictPort: true,
-    host: host || false,
-    hmr: host
-      ? {
-          protocol: "ws",
-          host,
-          port: 1421,
-        }
-      : undefined,
-    watch: {
-      // 3. tell vite to ignore watching `src-tauri`
-      ignored: ["**/src-tauri/**"],
+export default defineConfig({
+  plugins: [
+    VueRouter({
+      exclude: ["**/utils/**", "**/components/**", "**/assets/**"],
+    }),
+    vue(),
+    vueJsx(),
+    vueDevTools(),
+    tailwindcss(),
+    AutoImport({
+      imports: ["vue", VueRouterAutoImports],
+    }),
+    Components({
+      deep: false,
+      resolvers: [IconsResolver()],
+    }),
+    Icons({ compiler: "vue3" }),
+    TurboConsole({}),
+  ],
+  resolve: {
+    alias: {
+      "@": fileURLToPath(new URL("./src", import.meta.url)),
     },
   },
-}));
+  build: {
+    cssMinify: "lightningcss",
+  },
+  css: {
+    transformer: "lightningcss",
+    lightningcss: {
+      targets: browserslistToTargets(browserslist()),
+    },
+  },
+});
