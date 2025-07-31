@@ -22,3 +22,7 @@
   width: 100%;
   overflow: auto;
 }
+
+html:root {
+  --el-font-family: var(--font-sans);
+}
