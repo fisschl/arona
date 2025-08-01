@@ -20,9 +20,6 @@ importers:
       '@fontsource-variable/fira-code':
         specifier: ^5.2.6
         version: 5.2.6
-      '@fontsource-variable/noto-sans-sc':
-        specifier: ^5.2.6
-        version: 5.2.6
       '@iconify-json/lucide':
         specifier: ^1.2.59
         version: 1.2.59
@@ -720,9 +717,6 @@ packages:
 
   '@fontsource-variable/fira-code@5.2.6':
     resolution: {integrity: sha512-TZe+3xOB0JofZOTNeITYVsD1y/OiFucwTmcmhC19mj+GOgCnNkbp7bb1Jobfg+HjlAHr11HdptENKu0B+VkWLg==}
-
-  '@fontsource-variable/noto-sans-sc@5.2.6':
-    resolution: {integrity: sha512-PbDg8YG05A/8mFiII8lqK0Nvn5gDbCcvDctwNQjIFaBptLFNXDofmnocvki+A4ss3VxdYCyG4xznauMPQi+/RA==}
 
   '@humanfs/core@0.19.1':
     resolution: {integrity: sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA==}
@@ -4905,8 +4899,6 @@ snapshots:
   '@floating-ui/utils@0.2.10': {}
 
   '@fontsource-variable/fira-code@5.2.6': {}
-
-  '@fontsource-variable/noto-sans-sc@5.2.6': {}
 
   '@humanfs/core@0.19.1': {}
 

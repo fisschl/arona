@@ -1,28 +1,7 @@
 @import "tailwindcss";
-
 @plugin "@tailwindcss/typography";
 
 @theme {
-  --font-sans: "Noto Sans SC Variable", system-ui;
-  --font-mono: "Fira Code Variable", "Noto Sans SC Variable", monospace;
-}
-
-:root {
-  color-scheme: light dark;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    color-scheme: dark;
-  }
-}
-
-#app {
-  height: 100dvh;
-  width: 100%;
-  overflow: auto;
-}
-
-html:root {
-  --el-font-family: var(--font-sans);
+  --font-sans: "MiSans", system-ui;
+  --font-mono: "Fira Code Variable", monospace;
 }
