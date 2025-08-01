@@ -13,6 +13,21 @@ useAutoDarkMode();
 
 <template>
   <ElConfigProvider :locale="zhCn">
-    <RouterView />
+    <ElContainer class="app-container">
+      <ElAside width="3rem">Aside</ElAside>
+      <ElMain class="app-main">
+        <RouterView />
+      </ElMain>
+    </ElContainer>
   </ElConfigProvider>
 </template>
+
+<style scoped>
+.app-container {
+  height: 100dvh;
+}
+
+.app-main {
+  padding: 0;
+}
+</style>
