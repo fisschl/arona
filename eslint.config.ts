@@ -16,6 +16,6 @@ export default sxzz().append(
     },
   },
   {
-    ignores: ["**/dist/**", "**/assets/**", "**/*.js", "**/*.d.ts", "**/*.mjs"],
+    ignores: ["**/dist/**", "**/assets/**", "**/*.js", "**/*.d.ts", "**/*.mjs", "**/*.md"],
   },
 );
